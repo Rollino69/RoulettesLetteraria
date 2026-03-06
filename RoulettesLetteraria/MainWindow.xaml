@@ -1,0 +1,14 @@
+﻿<Window x:Class="RoulettesLetteraria.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:RoulettesLetteraria"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="450" Width="800">
+    <Grid>
+        <Button Name="btn_stampa" Content="STAMPA" HorizontalAlignment="Left" Margin="107,218,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.576,0.579" Height="49" Width="112" Click="btn_stampa_Click"/>
+        <Label Name="lblStampa" Content="" HorizontalAlignment="Left" Margin="253,174,0,0" VerticalAlignment="Top" Width="353" Height="147" FontSize="24"/>
+
+    </Grid>
+</Window>
