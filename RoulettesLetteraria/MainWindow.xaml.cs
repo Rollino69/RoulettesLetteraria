@@ -16,6 +16,8 @@ namespace RoulettesLetteraria
     /// <summary>
     /// Interaction logic for MainWindow.xaml
     /// </summary>
+    
+    
     public partial class MainWindow : Window
     {
         public MainWindow()
@@ -23,38 +25,34 @@ namespace RoulettesLetteraria
             InitializeComponent();
         }
 
-        
+        public void InseireLunghezza()
+        {
+            MessageBox.Show("inserire la lunghezza dderata della parola");
+
+        }
+            
 
 
         private async void btn_stampa_Click(object sender, RoutedEventArgs e)
         {
-            
-            while(true)
-            {
-                lbl_stampa.Content = new string[] { "A", "B", "C", "D", "E", "F", "G", "H", "I", "L", "M", "N", "O", "P", "Q", "R", "S", "T", "U", "V", "Z" }[new Random().Next(0, 21)];
-                await Task.Delay(100);
-            }
-
-        }
-
-
-        private void btn_change_function_Click(object sender, RoutedEventArgs e)
-        {
             if(btn_stampa.Content.ToString() == "Inizia")
             {
                 btn_stampa.Content = "Stampa";
+            
 
+                while (true)
+                {
+                    lbl_stampa.Content = new string[] { "A", "B", "C", "D", "E", "F", "G", "H", "I", "L", "M", "N", "O", "P", "Q", "R", "S", "T", "U", "V", "Z" }[new Random().Next(0, 21)];
+                    await Task.Delay(100);
+                }
             }
-            else
+            if else(lsb_parole.Items.Count < )
             {
-                lst_parole.Items.Add(new ListBoxItem() { Content = lbl_stampa.Content.ToString() });
+                
+                
+                lsb_parole.Items.Add(new ListBoxItem() { Content = lbl_stampa.Content.ToString() });
+                
             }
-        }
-
-
-        private void ListBox_SelectionChanged(object sender, SelectionChangedEventArgs e)
-        {
-
         }
     }
 }
