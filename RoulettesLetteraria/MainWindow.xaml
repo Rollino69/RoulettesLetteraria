@@ -5,19 +5,27 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:RoulettesLetteraria"
         mc:Ignorable="d"
-        Title="MainWindow" Height="450" Width="800">
+        Title="RouletteLetteraria" Height="450" Width="800">
     <Grid>
-        <Button Name="btn_stampa" Content="Inizia" HorizontalAlignment="Left" Margin="46,323,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.576,0.579" Height="86" Width="178" Click="btn_stampa_Click"/>
-        <Label Name="lbl_stampa" Content="" HorizontalAlignment="Left" Margin="47,83,0,0" VerticalAlignment="Top" Width="353" Height="147" FontSize="24"/>
-        <ListBox x:Name="lsb_parole" HorizontalAlignment="Left" Height="143" Margin="508,130,0,0" VerticalAlignment="Top" Width="213" d:ItemsSource="{d:SampleData ItemCount=5}">
+        <Grid.Background>
+            <ImageBrush ImageSource="/Images/aula.png"/>
+        </Grid.Background>
+        <Button Name="btn_stampa" Content="Inizia" HorizontalAlignment="Left" Margin="112,293,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.576,0.579" Height="64" Width="192" Click="btn_stampa_Click"/>
+        <Label Name="lbl_stampa" Content="" HorizontalAlignment="Left" Margin="24,126,0,0" VerticalAlignment="Top" Width="354" Height="147" FontSize="24" Foreground="White">
+            <Label.Background>
+                <ImageBrush ImageSource="/Images/lavagna.png"/>
+            </Label.Background>
+        </Label>
+        <ListBox x:Name="lsb_parole" HorizontalAlignment="Left" Height="156" Margin="474,126,0,0" VerticalAlignment="Top" Width="263" d:ItemsSource="{d:SampleData ItemCount=5}">
 
             <ListBox.ItemsPanel>
                 <ItemsPanelTemplate>
-                    <WrapPanel Orientation="Horizontal"/>    <!--Grazie al Warp posso visualizzare tutti i char inline nella listbox-->
+                    <WrapPanel Orientation="Horizontal"/>
+                    <!--Grazie al Warp posso visualizzare tutti i char inline nella listbox-->
                 </ItemsPanelTemplate>
             </ListBox.ItemsPanel>
         </ListBox>
-        <TextBox Name="txt_lunghezza" HorizontalAlignment="Center" Margin="0,323,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="251"/>
-        <Button x:Name="btn_pulisci" Content="Nuova Partita" HorizontalAlignment="Left" Margin="61,390,0,0" VerticalAlignment="Top" Height="40" Width="178" Click="btn_pulisci_Click"/>
+        <TextBox Name="txt_lunghezza" HorizontalAlignment="Left" Margin="293,245,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="68"/>
+        <Button x:Name="btn_pulisci" Content="Nuova Partita" HorizontalAlignment="Left" Margin="112,362,0,0" VerticalAlignment="Top" Height="33" Width="192" Click="btn_pulisci_Click"/>
     </Grid>
 </Window>
