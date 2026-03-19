@@ -70,6 +70,5 @@ namespace RoulettesLetteraria
             btn_stampa.Content = "Inizia";
             
         }
-    
     }
 }

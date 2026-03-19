@@ -10,13 +10,13 @@
         <Grid.Background>
             <ImageBrush ImageSource="/Images/aula.png"/>
         </Grid.Background>
-        <Button Name="btn_stampa" Content="Inizia" HorizontalAlignment="Left" Margin="112,293,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.576,0.579" Height="64" Width="192" Click="btn_stampa_Click"/>
-        <Label Name="lbl_stampa" Content="" HorizontalAlignment="Left" Margin="24,126,0,0" VerticalAlignment="Top" Width="354" Height="147" FontSize="24" Foreground="White">
+        <Button Name="btn_stampa" Content="Inizia" HorizontalAlignment="Left" Margin="114,288,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.576,0.579" Height="59" Width="192" Click="btn_stampa_Click" BorderBrush="#FF2C4E35" BorderThickness="3,3,3,3" FontSize="16" FontWeight="Bold" FontFamily="Bauhaus 93"/>
+        <Label Name="lbl_stampa" HorizontalAlignment="Left" Margin="24,126,0,0" VerticalAlignment="Top" Width="354" Height="147" FontSize="24" Foreground="White" HorizontalContentAlignment="Center">
             <Label.Background>
                 <ImageBrush ImageSource="/Images/lavagna.png"/>
             </Label.Background>
         </Label>
-        <ListBox x:Name="lsb_parole" HorizontalAlignment="Left" Height="156" Margin="474,126,0,0" VerticalAlignment="Top" Width="263" d:ItemsSource="{d:SampleData ItemCount=5}">
+        <ListBox x:Name="lsb_parole" HorizontalAlignment="Left" Height="156" Margin="474,117,0,0" VerticalAlignment="Top" Width="263" d:ItemsSource="{d:SampleData ItemCount=5}" Opacity="0.78" BorderBrush="{x:Null}" BorderThickness="2,2,2,2" ClipToBounds="True">
 
             <ListBox.ItemsPanel>
                 <ItemsPanelTemplate>
@@ -26,6 +26,7 @@
             </ListBox.ItemsPanel>
         </ListBox>
         <TextBox Name="txt_lunghezza" HorizontalAlignment="Left" Margin="293,245,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="68"/>
-        <Button x:Name="btn_pulisci" Content="Nuova Partita" HorizontalAlignment="Left" Margin="112,362,0,0" VerticalAlignment="Top" Height="33" Width="192" Click="btn_pulisci_Click"/>
+        <Button x:Name="btn_pulisci" Content="Nuova Partita" HorizontalAlignment="Left" Margin="114,352,0,0" VerticalAlignment="Top" Height="33" Width="192" Click="btn_pulisci_Click" BorderBrush="#FF2C4E35" BorderThickness="3,3,3,3" FontFamily="Bauhaus 93" FontSize="14"/>
+        <TextBox HorizontalAlignment="Left" Margin="114,218,0,0" TextWrapping="Wrap" Text="Inserisci la lunghezza massima della parola -&gt;" VerticalAlignment="Top" Width="179" Background="{x:Null}" Foreground="#FFE1E9E2" FontSize="16" BorderBrush="{x:Null}"/>
     </Grid>
 </Window>
