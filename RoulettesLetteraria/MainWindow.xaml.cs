@@ -25,87 +25,51 @@ namespace RoulettesLetteraria
             InitializeComponent();
         }
 
-        /* public void InseireLunghezza()
-         {
-             MessageBox.Show("inserire la lunghezza dderata della parola"); //pag 18 classi terze
-             string lunghezza = txt_lunghezza.Text;
-              if (int.TryParse(string lunghezza out int result))
-              {
-                  if (v > 0)
-                  {
-
-                      MessageBox.Show($"Lunghezza inserita: {v}");
-                  }
-                  else
-                  {
-                      MessageBox.Show("La lunghezza deve essere un numero positivo.");
-                  }
-              }
-              else
-              {
-                  MessageBox.Show("Per favore, inserisci un numero valido per la lunghezza.");
-
-             }*/
-
-
-
 
         private async void btn_stampa_Click(object sender, RoutedEventArgs e)
         {
-            
+
+            //leggo la lunghezza massima impostata dall'utente e faccio un controllo
             int limiteMassimo = 0;
             int.TryParse(txt_lunghezza.Text, out limiteMassimo);
 
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            if (btn_stampa.Content.ToString() == "Inizia")
-            {
+           if (btn_stampa.Content.ToString() == "Inizia")
+           {
                 btn_stampa.Content = "Stampa";
 
-                
-                while (true)
+                //faccio girare il ciclo solo finché il bottone dice "Stampa".
+                while (btn_stampa.Content.ToString() == "Stampa")
                 {
                     string[] lettere = { "A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K", "L", "M", "N", "O", "P", "Q", "R", "S", "T", "U", "V", "W", "X", "Y", "Z" };
-                    lbl_stampa.Content = lettere[new Random().Next(0, lettere.Length)]; //come massimo metti la lunghezz ainseritsa
-                    
-                    
+                    lbl_stampa.Content = lettere[new Random().Next(0, lettere.Length)]; //come massimo metto la lunghezz ainserita dall'utente
+
+
                     await Task.Delay(100);
                 }
-            }
+           }
             
             else if (lsb_parole.Items.Count < limiteMassimo)
             {
-                
-                
-                
-                
+                //aggiungo la lettera alla lista se non ho ancora raggiunto li limite
                 lsb_parole.Items.Add(lbl_stampa.Content.ToString());
 
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            
             }
             else
-            {
-                MessageBox.Show("l max");
+            {   
+                MessageBox.Show($"Lunghezza massima della parola raggiunta!");
             }
         }
+
+        private void btn_pulisci_Click(object sender, RoutedEventArgs e)
+        {
+        
+            //cancello tutte le lettere dalla lista
+            lsb_parole.Items.Clear();
+
+            //riscrivo "inizia" anziche "stampa" perche ho riniiziato 
+            btn_stampa.Content = "Inizia";
+            
+        }
+    
     }
 }
