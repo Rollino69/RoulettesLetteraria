@@ -1,13 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "8J1aJ+y7Rso=",
+  "dgSpecHash": "e9swAxFUYo4=",
   "success": true,
-  "projectFilePath": "C:\\Users\\federico.minotti\\Desktop\\RoulettesLetteraria\\RoulettesLetteraria\\RoulettesLetteraria.csproj",
-  "expectedPackageFiles": [
-    "C:\\Users\\federico.minotti\\.nuget\\packages\\microsoft.windowsdesktop.app.ref\\8.0.22\\microsoft.windowsdesktop.app.ref.8.0.22.nupkg.sha512",
-    "C:\\Users\\federico.minotti\\.nuget\\packages\\microsoft.netcore.app.ref\\8.0.22\\microsoft.netcore.app.ref.8.0.22.nupkg.sha512",
-    "C:\\Users\\federico.minotti\\.nuget\\packages\\microsoft.aspnetcore.app.ref\\8.0.22\\microsoft.aspnetcore.app.ref.8.0.22.nupkg.sha512",
-    "C:\\Users\\federico.minotti\\.nuget\\packages\\microsoft.netcore.app.host.win-x64\\8.0.22\\microsoft.netcore.app.host.win-x64.8.0.22.nupkg.sha512"
-  ],
+  "projectFilePath": "C:\\Users\\pkmmi\\OneDrive\\Desktop\\RL\\RoulettesLetteraria\\RoulettesLetteraria\\RoulettesLetteraria.csproj",
+  "expectedPackageFiles": [],
   "logs": []
 }

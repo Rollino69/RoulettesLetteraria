@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("RoulettesLetteraria")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+1b1a9470b98e4c809a740205405f726443c2a4a0")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+51b04bc7a2a6e57932047ddda9b004367027a8cd")]
 [assembly: System.Reflection.AssemblyProductAttribute("RoulettesLetteraria")]
 [assembly: System.Reflection.AssemblyTitleAttribute("RoulettesLetteraria")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

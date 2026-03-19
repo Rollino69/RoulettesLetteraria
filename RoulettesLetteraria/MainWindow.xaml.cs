@@ -75,7 +75,7 @@ namespace RoulettesLetteraria
                 
                 while (true)
                 {
-                    string[] lettere = { "A", "B", "C", "D", "E", "F", "G", "H", "I", "L", "M", "N", "O", "P", "Q", "R", "S", "T", "U", "V", "Z" };
+                    string[] lettere = { "A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K", "L", "M", "N", "O", "P", "Q", "R", "S", "T", "U", "V", "W", "X", "Y", "Z" };
                     lbl_stampa.Content = lettere[new Random().Next(0, lettere.Length)]; //come massimo metti la lunghezz ainseritsa
                     
                     
