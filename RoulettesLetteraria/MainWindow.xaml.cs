@@ -1,74 +1,77 @@
-﻿using System.ComponentModel;
-using System.Text;
+﻿using System;
+using System.Threading.Tasks;
 using System.Windows;
-using System.Windows.Controls;
-using System.Windows.Data;
-using System.Windows.Documents;
-using System.Windows.Input;
-using System.Windows.Media;
-using System.Windows.Media.Imaging;
-using System.Windows.Navigation;
-using System.Windows.Shapes;
-using System.Xml.Schema;
 
 namespace RoulettesLetteraria
 {
-    /// <summary>
-    /// Interaction logic for MainWindow.xaml
-    /// </summary>
-    
-    
     public partial class MainWindow : Window
     {
+        // Spostiamo qui le variabili per non ricrearle ogni millisecondo
+        private readonly string[] _lettere = { "A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K", "L", "M", "N", "O", "P", "Q", "R", "S", "T", "U", "V", "W", "X", "Y", "Z" };
+        private readonly Random _generatoreRandom = new Random();
+
         public MainWindow()
         {
             InitializeComponent();
         }
 
-
         private async void btn_stampa_Click(object sender, RoutedEventArgs e)
         {
-
-            //leggo la lunghezza massima impostata dall'utente e faccio un controllo
+            // Leggo la lunghezza massima impostata dall'utente
             int limiteMassimo = 0;
             int.TryParse(txt_lunghezza.Text, out limiteMassimo);
 
-           if (btn_stampa.Content.ToString() == "Inizia")
-           {
+            // Se la casella è vuota, contiene lettere invece di numeri, o è uno zero: ERRORE!
+            if (limiteMassimo <= 0)
+            {
+                MessageBox.Show("Errore: devi prima inserire una lunghezza massima valida!");  
+                return; // Il comando 'return' fa fermare immediatamente il codice qui, così la roulette non parte.
+            }
+
+            if (btn_stampa.Content.ToString() == "Inizia")
+            {
                 btn_stampa.Content = "Stampa";
 
-                //faccio girare il ciclo solo finché il bottone dice "Stampa".
+                // Faccio girare il ciclo finché il bottone dice "Stampa"
                 while (btn_stampa.Content.ToString() == "Stampa")
                 {
-                    string[] lettere = { "A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K", "L", "M", "N", "O", "P", "Q", "R", "S", "T", "U", "V", "W", "X", "Y", "Z" };
-                    lbl_stampa.Content = lettere[new Random().Next(0, lettere.Length)]; //come massimo metto la lunghezz ainserita dall'utente
-
-
+                    lbl_stampa.Content = _lettere[_generatoreRandom.Next(0, _lettere.Length)];
                     await Task.Delay(100);
                 }
-           }
-            
-            else if (lsb_parole.Items.Count < limiteMassimo)
-            {
-                //aggiungo la lettera alla lista se non ho ancora raggiunto li limite
-                lsb_parole.Items.Add(lbl_stampa.Content.ToString());
-
             }
             else
-            {   
-                MessageBox.Show($"Lunghezza massima della parola raggiunta!");
+            {
+                // Controllo per sicurezza che la label non sia vuota prima di catturare
+                if (lbl_stampa.Content == null) return;
+
+                string letteraCatturata = lbl_stampa.Content.ToString();
+
+                // LOGICA PER ANDARE A CAPO:
+                // Se la lista è vuota oppue l'ultima parola ha raggiunto il limite
+                if (lsb_parole.Items.Count == 0 || lsb_parole.Items[lsb_parole.Items.Count - 1].ToString().Length >= limiteMassimo)
+                {
+                    // creo una nuova parola in una nuova riga
+                    lsb_parole.Items.Add(letteraCatturata);
+                }
+                else
+                {
+                    // altrimenti, incollo la lettera alla parola che sto completando
+                    int indiceUltimaParola = lsb_parole.Items.Count - 1;
+                    string parolaCorrente = lsb_parole.Items[indiceUltimaParola].ToString();
+
+                    lsb_parole.Items[indiceUltimaParola] = parolaCorrente + letteraCatturata;
+                }
             }
         }
 
         private void btn_pulisci_Click(object sender, RoutedEventArgs e)
         {
-        
-            //cancello tutte le lettere dalla lista
+            // Cancello tutte le lettere dalla lista
             lsb_parole.Items.Clear();
 
-            //riscrivo "inizia" anziche "stampa" perche ho riniiziato 
+            // Riscrivo "Inizia" e svuoto la lavagna
             btn_stampa.Content = "Inizia";
-            
+            lbl_stampa.Content = "";
         }
     }
 }
